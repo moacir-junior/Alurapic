@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
-import { PhotoService } from './photos/photo/photo.service';
 import { PhotosModule } from './photos/photos.module';
 import { ErrorsModule } from './errors/errors.module';
 
@@ -17,7 +16,6 @@ import { ErrorsModule } from './errors/errors.module';
     PhotosModule,
     ErrorsModule
   ],
-  providers: [PhotoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

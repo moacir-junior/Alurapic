@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Photo } from '../photo/photo';
+import { Photo } from 'src/app/photos/models/photo';
 
 @Pipe({
     name: 'filterbydescription'

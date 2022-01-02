@@ -1,5 +1,7 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import { Photo } from '../../photo/photo';
+import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
+
+import { Photo } from 'src/app/photos/models/photo';
 
 @Component({
     selector: 'ap-photos',
@@ -7,10 +9,12 @@ import { Photo } from '../../photo/photo';
 })
 export class PhotosComponent implements OnChanges {
 
-    @Input()
-    public photos: Photo[] = [];
-
+    @Input() public photos: Photo[] = [];
     public rows: any[] = [];
+
+    //Fontawesome icons tie
+    public faHeart = faHeart;
+    public faComment = faComment;
 
     constructor() {}
 

@@ -4,11 +4,15 @@
 
 <ol class="list-unstyled">
     <li *ngFor="let row of rows" class="row">
-        <div *ngFor="let photo of row" class="col-4">
-            <ap-photo
-                [url]="photo.url"
-                [description]="photo.description">
-            </ap-photo>
+        <div *ngFor="let photo of row" class="col-4" darkenOnHover>
+            <ap-card>
+                <ap-photo [url]="photo.url" [description]="photo.description">
+                </ap-photo>
+                <div class="text-center p-1">
+                    <fa-icon [icon]="faHeart" size="1x"></fa-icon>{{ photo.likes }}
+                    <fa-icon [icon]="faComment" size="1x"></fa-icon>{{ photo.comments }}
+                </div>
+            </ap-card>
         </div>
     </li>
 </ol>

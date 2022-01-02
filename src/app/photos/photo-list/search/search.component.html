@@ -1,0 +1,12 @@
+<div class="text-center mt-3 mb-3">
+    <form>
+        <fa-icon [icon]="faSearch"></fa-icon>
+        <input
+            class="rounded"
+            type="search"
+            [value]="value"
+            placeholder="search..."
+            autofocus
+            (keyup)="keyupListener($event)">
+    </form>
+</div>

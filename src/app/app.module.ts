@@ -5,7 +5,10 @@ import { AppComponent } from 'src/app/app.component';
 import { AppRoutingModule } from 'src/app/app.routing.module';
 import { PhotosModule } from 'src/app/photos/photos.module';
 import { ErrorsModule } from 'src/app/errors/errors.module';
-import { HomeModule } from './home/home.module';
+import { HomeModule } from 'src/app/home/home.module';
+import { AuthService } from 'src/app/core/auth/auth.service';
+import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
+import { TokenService } from './core/token/token.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,11 @@ import { HomeModule } from './home/home.module';
     PhotosModule,
     ErrorsModule,
     HomeModule
+  ],
+  providers: [
+    AuthService,
+    TokenService,
+    PlatformDetectorService
   ],
   bootstrap: [
     AppComponent

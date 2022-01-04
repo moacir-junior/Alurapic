@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { User } from '../user/user';
+import { UserService } from '../user/user.service';
 
 @Component({
     selector: 'ap-header',
@@ -7,10 +9,18 @@ import { faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
 
+    public user!: User;
+
     // Fontawesome icons tie
     public faUserCircle = faUserCircle;
 
-    constructor() {}
+    constructor(private userService: UserService) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.userService.getUser().subscribe(user => {
+            if(user) {
+                this.user = user;
+            }
+        });
+    }
 }

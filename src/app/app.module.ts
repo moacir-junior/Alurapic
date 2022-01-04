@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
 import { TokenService } from './core/token/token.service';
 import { CoreModule } from './core/core.module';
+import { UserService } from './core/user/user.service';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,13 @@ import { CoreModule } from './core/core.module';
     PhotosModule,
     ErrorsModule,
     HomeModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [
     AuthService,
     TokenService,
-    PlatformDetectorService
+    PlatformDetectorService,
+    UserService
   ],
   bootstrap: [
     AppComponent

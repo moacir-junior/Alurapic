@@ -9,6 +9,7 @@ import { HomeModule } from 'src/app/home/home.module';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
 import { TokenService } from './core/token/token.service';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TokenService } from './core/token/token.service';
     AppRoutingModule,
     PhotosModule,
     ErrorsModule,
-    HomeModule
+    HomeModule,
+    CoreModule
   ],
   providers: [
     AuthService,

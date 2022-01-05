@@ -30,4 +30,9 @@ export class UserService {
             this.userSubject.next(user);
         }
     }
+
+    removeToken() {
+        this.tokenService.removeToken();
+        this.userSubject.next(null);
+    }
 }

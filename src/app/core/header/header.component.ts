@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+
 import { User } from '../user/user';
 import { UserService } from '../user/user.service';
 
@@ -9,7 +11,7 @@ import { UserService } from '../user/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-    public user!: User;
+    public user$!: Observable<User | null>;
 
     // Fontawesome icons tie
     public faUserCircle = faUserCircle;
@@ -17,10 +19,6 @@ export class HeaderComponent implements OnInit {
     constructor(private userService: UserService) {}
 
     ngOnInit(): void {
-        this.userService.getUser().subscribe(user => {
-            if(user) {
-                this.user = user;
-            }
-        });
+        this.user$ = this.userService.getUser();
     }
 }

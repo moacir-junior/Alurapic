@@ -31,6 +31,10 @@ export class UserService {
         }
     }
 
+    hasToken() {
+        return this.tokenService.hasToken();
+    }
+
     removeToken() {
         this.tokenService.removeToken();
         this.userSubject.next(null);
